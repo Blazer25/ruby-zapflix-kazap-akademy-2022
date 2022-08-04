@@ -1,0 +1,42 @@
+<div class="card mb-3 col-12 dark-gray-6">
+  <div class="row g-0 rounded dark-gray-6">
+    <div class="col">
+      <div class="card-body">
+        <div class="row">
+          <h1>Diretores</h1>
+          <a href="/directors/new"><button>Novo</button></a>
+        </div>
+        <div class="row">
+        <div class="col-12">
+          <table class="table table-dark">
+  <thead>
+    <tr>
+    
+      <th scope="col">Nome</th>
+      <th scope="col">Criado em</th>
+
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+
+          <div id="artists">
+  <% @directors.each do |directors| %>
+</div>
+    <tr>
+      <td>  <%= directors.nome %></td>
+      <td>  <%= directors.created_at %></td>
+      <td><a href="/directors/<%=directors.id %>/edit"><button>E</button></a>  <a href="#"><button>X</button></a>  </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+        </div>
+        </div>
+
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

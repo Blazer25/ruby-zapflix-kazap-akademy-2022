@@ -1,0 +1,42 @@
+<div class="card mb-3 col-12 dark-gray-6">
+  <div class="row g-0 rounded dark-gray-6">
+    <div class="col">
+      <div class="card-body">
+        <div class="row">
+          <h1>Gêneros</h1>
+          <a href="/movie_genres/new"><button>Novo</button></a>
+        </div>
+        <div class="row">
+        <div class="col-12">
+          <table class="table table-dark">
+  <thead>
+    <tr>
+    
+      <th scope="col">Nome</th>
+      <th scope="col">Criado em</th>
+
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+
+          <div id="artists">
+  <% @movie_genres.each do |movie_genres| %>
+</div>
+    <tr>
+      <td>  <%= movie_genres.genero %></td>
+      <td>  <%= movie_genres.created_at %></td>
+      <td><a href="/movie_genres/<%=movie_genres.id %>/edit"><button>E</button></a>  <a href="#"><button>X</button></a>  </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+        </div>
+        </div>
+
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
