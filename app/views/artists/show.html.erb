@@ -3,7 +3,7 @@
         <div class="w-100">
           <span class="aviso-exclusao-superior"> <%= image_tag 'warning-fill.svg', style: 'margin: 6px;' %> Atenção!</span>
           <span class="aviso-exclusao-meio">Você realmente deseja excluir esse item?</span>
-          <span class="aviso-exclusao-inferior"><%= link_to "Voltar", movies_path, class: "botao-voltar" %> <%= button_to "Excluir", @artist, method: :delete, class: "botao-excluir" %></span>
+          <span class="aviso-exclusao-inferior"><%= link_to "Voltar", artists_path, class: "botao-voltar" %> <%= button_to "Excluir", @artist, method: :delete, class: "botao-excluir" %></span>
         </div>
     </div>
 </div>
