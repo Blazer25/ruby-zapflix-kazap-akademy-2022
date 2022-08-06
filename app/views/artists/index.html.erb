@@ -4,7 +4,7 @@
       <div class="card-body">
         <div class="col">
           <h1 class="d-flex align-itens-center">Artistas</h1>
-          <a href="/movies/new" class="d-flex justify-content-end mb-4" style="text-decoration:none;"><button class="botao-novo">Novo</button></a>
+          <a href="/artists/new" class="d-flex justify-content-end mb-4" style="text-decoration:none;"><button class="botao-rosa">Novo</button></a>
         </div>
         <div class="row">
           <div class="col-12">
@@ -21,9 +21,9 @@
                   <% @artists.each do |artist| %>
                   </div>
                   <tr>
-                    <td>  <%= artist.nome %></td>
-                    <td>  <%= artist.created_at %></td>
-                    <td><a href="/artists/<%=artist.id %>/edit"><button>E</button></a>  <a href="#"><button>X</button></a>  </td>
+                    <td>  <%= tratar_valor(artist.nome) %></td>
+                    <td>  <%= formatar_data(artist.created_at) %></td>
+                    <td><a href="/artists/<%=artist.id %>/edit"><%= image_tag 'editIcon.png'%></a>  <a href="/artists/<%=artist.id %>"><%= image_tag 'deleteIcon.png'%></a>  </td>
                   </tr>
                 <% end %>
               </tbody>

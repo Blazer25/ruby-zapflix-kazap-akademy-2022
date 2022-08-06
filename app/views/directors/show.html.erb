@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @director %>
-
-<div>
-  <%= link_to "Edit this director", edit_director_path(@director) %> |
-  <%= link_to "Back to directors", directors_path %>
-
-  <%= button_to "Destroy this director", @director, method: :delete %>
+<div class="container-msg-excluir">
+    <div class="caixa-aviso">
+        <div class="w-100">
+          <span class="aviso-exclusao-superior"> <%= image_tag 'warning-fill.svg', style: 'margin: 6px;' %> Atenção!</span>
+          <span class="aviso-exclusao-meio">Você realmente deseja excluir esse item?</span>
+          <span class="aviso-exclusao-inferior"><%= link_to "Voltar", movies_path, class: "botao-voltar" %> <%= button_to "Excluir", @director, method: :delete, class: "botao-excluir" %></span>
+        </div>
+    </div>
 </div>

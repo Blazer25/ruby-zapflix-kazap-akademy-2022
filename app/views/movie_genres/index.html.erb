@@ -4,7 +4,7 @@
       <div class="card-body">
         <div class="col">
           <h1 class="d-flex align-itens-center">Gêneros</h1>
-          <a href="/movies/new" class="d-flex justify-content-end mb-4" style="text-decoration:none;"><button class="botao-novo">Novo</button></a>
+          <a href="/movie_genres/new" class="d-flex justify-content-end mb-4" style="text-decoration:none;"><button class="botao-rosa">Novo</button></a>
         </div>
         <div class="row">
           <div class="col-12">
@@ -21,9 +21,9 @@
                   <% @movie_genres.each do |movie_genres| %>
                   </div>
                   <tr>
-                    <td>  <%= movie_genres.genero %></td>
-                    <td>  <%= movie_genres.created_at %></td>
-                    <td><a href="/movie_genres/<%=movie_genres.id %>/edit"><button>E</button></a>  <a href="#"><button>X</button></a>  </td>
+                    <td>  <%= tratar_valor(movie_genres.genero) %></td>
+                    <td>  <%= formatar_data(movie_genres.created_at) %></td>
+                    <td><a href="/movie_genres/<%=movie_genres.id %>/edit"><%= image_tag 'editIcon.png'%></a>   <a href="/movie_genres/<%=movie_genres.id %>"><%= image_tag 'deleteIcon.png'%></a>  </td>
                   </tr>
                 <% end %>
               </tbody>

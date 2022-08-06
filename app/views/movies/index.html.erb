@@ -5,7 +5,7 @@
         <div class="row d-flex">
           <div class="col">
             <h1 class="d-flex align-itens-center">Filmes Cadastrados</h1>
-            <a href="/movies/new" class="d-flex justify-content-end mb-4" style="text-decoration:none;"><button class="botao-novo">Novo</button></a>
+            <a href="/movies/new" class="d-flex justify-content-end mb-4" style="text-decoration:none;"><button class="botao-rosa">Novo</button></a>
           </div>
         </div>
         <div class="col-12">
@@ -24,11 +24,11 @@
                 <% @movies.each do |movies| %>
                 </div>
                 <tr>
-                  <td>  <%= movies.titulo %></td>
-                  <td>  <%= movies.diretor %></td>
-                  <td>  <%= movies.genero %></td>
-                  <td>  <%= movies.estreia %></td>
-                  <td><a href="/movies/<%=movies.id %>/edit"><button>E</button></a>  <a href="#"><button>X</button></a>  </td>
+                  <td>  <%= tratar_valor(movies.titulo) %></td>
+                  <td>  <%= tratar_valor(movies.diretor) %></td>
+                  <td>  <%= tratar_valor(movies.genero) %></td>
+                  <td>  <%= formatar_data(movies.estreia) %></td>
+                  <td><a href="/movies/<%=movies.id %>/edit"><%= image_tag 'editIcon.png'%></a>  <a href="/movies/<%=movies.id %>"><%= image_tag 'deleteIcon.png'%></a>  </td>
                 </tr>
               <% end %>
             </tbody>
@@ -37,6 +37,3 @@
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-</div>

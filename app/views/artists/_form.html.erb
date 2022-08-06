@@ -11,12 +11,15 @@
     </div>
   <% end %>
 
-  <div>
+<div class="col">
+  <div class="form-group">
     <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome %>
+    <%= form.text_field :nome, class: 'w-100' %>
   </div>
 
+<div class="col mt-4">
   <div>
-    <%= form.submit %>
+    <%= form.submit%>
   </div>
+</div>
 <% end %>
