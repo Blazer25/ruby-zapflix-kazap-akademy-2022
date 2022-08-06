@@ -1,3 +1,3 @@
 class Director < ApplicationRecord
-    belongs_to :movie
+    validates :nome, presence: true
 end

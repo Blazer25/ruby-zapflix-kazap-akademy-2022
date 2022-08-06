@@ -1,3 +1,3 @@
 class Artist < ApplicationRecord
-    belongs_to :movie
+    validates :nome, presence: true
 end

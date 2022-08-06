@@ -1,3 +1,4 @@
 class MovieGenre < ApplicationRecord
-    belongs_to :movie
+    validates :genero, presence: true
+
 end
