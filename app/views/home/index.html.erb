@@ -1,46 +1,39 @@
 <div class="card mb-3 col-12 dark-gray-6">
   <div class="row g-0 rounded dark-gray-6">
     <div class="col-md-6 mainCard">
-      <%= image_tag 'main-bg.png' %>
+                  <div id="movies">
+                <% Movie.all.find() do |movies| %>
+                </div>
+      <img src="<%=movies.capa%>" alt="Imagem filme principal">
     </div>
     <div class="col-md-6">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <h5 class="card-title"><%=movies.titulo%></h5>
+        <p class="card-text">Diretor: <%=movies.diretor%></p>
+        <p class="card-text">Estreia: <%=movies.estreia%></p>
+        <p class="card-text">Gênero: <%=movies.genero%></p>
+        <p class="card-text">Elenco: <%=movies.elenco%></p>
+        <p class="card-text">Sinopse: <%=movies.sinopse%></p>
+
       </div>
+      <% end %>
     </div>
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-4">
+ <div class="col-sm-4">
     <div class="card dark-gray-6">
-      <%= image_tag 'cover1.png', class: 'card-img-top' %>
+                      <div id="movies">
+                <% Movie.all.find(:last) do |movies| %>
+                </div>
+      <img src="<%=movies.capa%>" alt="Imagem filme intermediário">
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias porro amet consectetur reprehenderit possimus unde nemo quasi nisi, doloremque id nostrum enim atque, debitis quaerat itaque non quibusdam perferendis dolor.
-        </p>
+        <h5 class="card-title"><%=movies.titulo%></h5>
+        <p class="card-text">Diretor: <%=movies.diretor%></p>
+        <p class="card-text">Estreia: <%=movies.estreia%></p>
+        <p class="card-text">Sinopse: <%=movies.sinopse%></p>
       </div>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="card dark-gray-6">
-      <%= image_tag 'cover2.png', class: 'card-img-top' %>
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias porro amet consectetur reprehenderit possimus unde nemo quasi nisi, doloremque id nostrum enim atque, debitis quaerat itaque non quibusdam perferendis dolor.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="card dark-gray-6">
-      <%= image_tag 'cover3.png', class: 'card-img-top' %>
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias porro amet consectetur reprehenderit possimus unde nemo quasi nisi, doloremque id nostrum enim atque, debitis quaerat itaque non quibusdam perferendis dolor.
-        </p>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
