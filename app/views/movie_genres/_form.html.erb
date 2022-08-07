@@ -1,3 +1,8 @@
+<div class="card mb-3 col-12 dark-gray-6">
+<div class="row g-0 rounded dark-gray-6 p-4">
+<div class="col">
+<div class="card-body">
+
 <%= form_with(model: movie_genre) do |form| %>
   <% if movie_genre.errors.any? %>
     <div style="color: red">
@@ -22,5 +27,9 @@
       <a href="/movie_genres"><button class="botao-voltar2">Voltar</button></a>
       <input type="submit" value="Enviar" class="botao-excluir">
     </div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <% end %>
