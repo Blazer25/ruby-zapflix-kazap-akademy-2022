@@ -1,69 +1,71 @@
 <div class="card mb-3 col-12 dark-gray-6">
-<div class="row g-0 rounded dark-gray-6 p-4">
-<div class="col">
-<div class="card-body">
-
-  <div class="row">
-    <%= form_with(model: movie) do |form| %>
-      <% if movie.errors.any? %>
-        <div style="color: red">
-          <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
-          <ul>
-            <% movie.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="col">
-    <div class="form-group">
-      <%= form.label :titulo, style: "display: block" %>
-      <%= form.text_field :titulo, class: "w-100" %>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <div class="form-group">
-          <%= form.label :capa, style: "display: block" %>
-          <%= form.text_field :capa, class: "w-100" %>
+  <div class="row g-0 rounded dark-gray-6 p-4">
+    <div class="col">
+      <div class="card-body">
+        <div class="col">
+          <div class="alert alert-secondary w-100 h-100" role="alert">
+            <span>Caso tente cadastrar um filme e ao clicar em "Enviar" nada acontecer, por favor, recarregue a página...</span>
+          </div>
+          <div class="row">
+            <%= form_with(model: movie) do |form| %>
+              <% if movie.errors.any? %>
+                <div style="color: red">
+                  <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+                  <ul>
+                    <% movie.errors.each do |error| %>
+                      <li><%= error.full_message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= form.label :titulo, style: "display: block" %>
+            <%= form.text_field :titulo, class: "w-100" %>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <%= form.label :capa, style: "display: block" %>
+                <%= form.text_field :capa, class: "w-100" %>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <%= form.label :estreia, style: "display: block" %>
+                <input type="date" name="movie[estreia]" id="movie_estreia">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <%= form.label :diretor, style: "display: block" %>
+                <%=form.collection_select(:diretor, Director.all, :nome, :nome, include_blank: "Selecione um diretor:")%>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <%= form.label :genero, style: "display: block" %>
+                <%=form.collection_select(:genero, MovieGenre.all, :genero, :genero, include_blank: "Selecione um gênero:")%>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= form.label :sinopse, style: "display: block" %>
+            <%= form.text_area :sinopse, class: "w-100"%>
+          </div>
+          <div class="form-group mb-2">
+            <%= form.label :elenco, style: "display: block" %>
+            <%=form.collection_select(:elenco, Artist.all, :nome, :nome, include_blank: "Selecione um artista:")%>
+          </div>
+          <div class="mt-4">
+            <a href="/movies"><button class="botao-voltar2">Voltar</button></a>
+            <input type="submit" value="Enviar" class="botao-excluir">
+          </div>
         </div>
       </div>
-      <div class="col-6">
-        <div class="form-group">
-          <%= form.label :estreia, style: "display: block" %>
-          <input type="date" name="movie[estreia]" id="movie_estreia">
-        </div>
-      </div>
     </div>
-    <div class="row">
-      <div class="col-6">
-        <div class="form-group">
-          <%= form.label :diretor, style: "display: block" %>
-          <%=form.collection_select(:diretor, Director.all, :nome, :nome, include_blank: "Selecione um diretor:")%>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="form-group">
-          <%= form.label :genero, style: "display: block" %>
-          <%=form.collection_select(:genero, MovieGenre.all, :genero, :genero, include_blank: "Selecione um gênero:")%>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= form.label :sinopse, style: "display: block" %>
-      <%= form.text_area :sinopse, class: "w-100"%>
-    </div>
-    <div class="form-group mb-2">
-      <%= form.label :elenco, style: "display: block" %>
-      <%=form.collection_select(:elenco, Artist.all, :nome, :nome, include_blank: "Selecione um artista:")%>
-    </div>
-    <div class="mt-4">
-      <a href="/movies"><button class="botao-voltar2">Voltar</button></a>
-      <input type="submit" value="Enviar" class="botao-excluir">
-    </div>
-    </div>
-  </div>
-  </div>
   </div>
 <% end %>
