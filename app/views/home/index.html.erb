@@ -37,15 +37,15 @@
           <img src="<%=movies.capa%>" alt="Imagem filme intermediário">
           <div class="card-body">
             <p class="card-title h5"></strong><%=movies.titulo%></strong></p>
-            <p class="card-text"><strong>Diretor:</strong> <%=movies.diretor%></p>
-            <p class="card-text"><strong>Estreia:</strong> <%=movies.estreia%></p>
-            <p class="card-text sinopse2"><strong>Sinopse:</strong> <%=movies.sinopse%></p>
-          </div>
-        </div>
+        <p class="card-text"><strong>Diretor:</strong> <%=movies.diretor%></p>
+        <p class="card-text"><strong>Estreia:</strong> <%=movies.estreia%></p>
+        <p class="card-text sinopse2"><strong>Sinopse:</strong> <%=movies.sinopse%></p>
       </div>
-    <% end %>
+    </div>
   </div>
-  <% else %>
+<% end %>
+</div>
+<% else %>
   <div class="col-12">
     <div class="rounded">
       <div class="alert alert-danger w-100 h-100" role="alert">

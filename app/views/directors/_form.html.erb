@@ -1,35 +1,31 @@
 <div class="card mb-3 col-12 dark-gray-6">
-<div class="row g-0 rounded dark-gray-6 p-4">
-<div class="col">
-<div class="card-body">
-
-<%= form_with(model: director) do |form| %>
-  <% if director.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(director.errors.count, "error") %> prohibited this director from being saved:</h2>
-
-      <ul>
-        <% director.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <div class="row g-0 rounded dark-gray-6 p-4">
+    <div class="col">
+      <div class="card-body">
+        <%= form_with(model: director) do |form| %>
+          <% if director.errors.any? %>
+            <div style="color: red">
+              <h2><%= pluralize(director.errors.count, "error") %> prohibited this director from being saved:</h2>
+              <ul>
+                <% director.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="col">
+            <div class="form-group">
+              <%= form.label :nome, style: "display: block" %>
+              <%= form.text_field :nome, class: 'w-100' %>
+            </div>
+          </div>
+          <div class="mt-4">
+            <a href="/directors"><button class="botao-voltar2">Voltar</button></a>
+            <input type="submit" value="Enviar" class="botao-excluir">
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-<div class="col">
-  <div class="form-group">
-    <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome, class: 'w-100' %>
   </div>
-</div>
-
-    <div class="mt-4">
-      <a href="/directors"><button class="botao-voltar2">Voltar</button></a>
-      <input type="submit" value="Enviar" class="botao-excluir">
-    </div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <% end %>
