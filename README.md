@@ -1,7 +1,7 @@
 # Ruby on Rails - Zapflix Kazap Academy 2022
 
 ## 💻 Projeto
-Projeto feito utilizando o framwork Ruby on Rails. Sendo ele um catálogo de filmes que serão/foram lançados. Podendo cadastrar filmes, gêneros, diretores e artistas.
+Projeto feito utilizando o framework Ruby on Rails. Sendo ele um catálogo de filmes que serão/foram lançados. Podendo cadastrar filmes, gêneros, diretores e artistas.
 
 Projeto realizado para o Kazap Academy 2022 3a edição.
 
