@@ -1,9 +1,9 @@
 <div class="container-msg-excluir">
     <div class="caixa-aviso">
         <div class="w-100">
-          <span class="aviso-exclusao-superior"> <%= image_tag 'warning-fill.svg', style: 'margin: 6px;' %> Atenção!</span>
-          <span class="aviso-exclusao-meio">Você realmente deseja excluir esse item?</span>
-          <span class="aviso-exclusao-inferior"><%= link_to "Voltar", movies_path, class: "botao-voltar" %> <%= button_to "Excluir", @movie, method: :delete, class: "botao-excluir" %></span>
+          <span class="aviso-exclusao-superior"> <%= image_tag 'warning-fill.svg', style: 'margin: 6px;' %> Ações que poderá realizar:</span>
+          <span class="aviso-exclusao-meio">O que deseja fazer?</span>
+          <span class="aviso-exclusao-inferior"><%= link_to "Voltar", movies_path, class: "botao-voltar" %> <%= button_to "Excluir", @movie, method: :delete, class: "botao-excluir" %> <%= link_to "Editar", edit_movie_path(@movie), class: 'botao-editar' %></span>
         </div>
     </div>
 </div>

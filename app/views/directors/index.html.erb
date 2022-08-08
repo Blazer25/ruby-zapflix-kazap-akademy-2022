@@ -11,9 +11,9 @@
             <table class="table table-dark">
               <thead>
                 <tr>
-                  <th scope="col">Nome</th>
-                  <th scope="col">Criado em</th>
-                  <th scope="col">Ações</th>
+                  <th scope="col" class="text-center">Nome</th>
+                  <th scope="col" class="text-center">Criado em</th>
+                  <th scope="col" class="text-center">Ações</th>
                 </tr>
               </thead>
               <tbody>
@@ -21,9 +21,9 @@
                   <% @directors.each do |directors| %>
                   </div>
                   <tr>
-                    <td>  <%= tratar_valor(directors.nome) %></td>
-                    <td>  <%= formatar_data(directors.created_at) %></td>
-                    <td><a href="/directors/<%=directors.id %>/edit"><%= image_tag 'editIcon.png'%></a>  <a href="/directors/<%=directors.id %>"><%= image_tag 'deleteIcon.png'%></a>  </td>
+                    <td class="text-center">  <%= tratar_valor(directors.nome) %></td>
+                    <td class="text-center">  <%= formatar_data(directors.created_at) %></td>
+                    <td class="text-center"><a href="/directors/<%=directors.id %>"><%= image_tag 'settings-gears.png'%></a></td>
                   </tr>
                 <% end %>
               </tbody>

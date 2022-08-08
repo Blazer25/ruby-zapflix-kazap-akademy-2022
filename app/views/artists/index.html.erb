@@ -11,9 +11,9 @@
             <table class="table table-dark">
               <thead>
                 <tr>
-                  <th scope="col">Nome</th>
-                  <th scope="col">Criado em</th>
-                  <th scope="col">Ações</th>
+                  <th scope="col" class="text-center">Nome</th>
+                  <th scope="col" class="text-center">Criado em</th>
+                  <th scope="col" class="text-center">Ações</th>
                 </tr>
               </thead>
               <tbody>
@@ -21,9 +21,9 @@
                   <% @artists.each do |artist| %>
                   </div>
                   <tr>
-                    <td>  <%= tratar_valor(artist.nome) %></td>
-                    <td>  <%= formatar_data(artist.created_at) %></td>
-                    <td><a href="/artists/<%=artist.id %>/edit"><%= image_tag 'editIcon.png'%></a>  <a href="/artists/<%=artist.id %>"><%= image_tag 'deleteIcon.png'%></a>  </td>
+                    <td class="text-center">  <%= tratar_valor(artist.nome) %></td>
+                    <td class="text-center">  <%= formatar_data(artist.created_at) %></td>
+                    <td class="text-center"><a href="/artists/<%=artist.id %>"><%= image_tag 'settings-gears.png'%></a></td>
                   </tr>
                 <% end %>
               </tbody>

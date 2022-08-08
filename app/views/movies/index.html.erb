@@ -12,11 +12,11 @@
           <table class="table table-dark">
             <thead>
               <tr>
-                <th scope="col">Titulo</th>
-                <th scope="col">Diretor</th>
-                <th scope="col">Gênero</th>
-                <th scope="col">Estreia</th>
-                <th scope="col">Ações</th>
+                <th scope="col" class="text-center">Titulo</th>
+                <th scope="col" class="text-center">Diretor</th>
+                <th scope="col" class="text-center">Gênero</th>
+                <th scope="col" class="text-center">Estreia</th>
+                <th scope="col" class="text-center">Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -24,11 +24,11 @@
                 <% @movies.each do |movies| %>
                 </div>
                 <tr>
-                  <td>  <%= tratar_valor(movies.titulo) %></td>
-                  <td>  <%= tratar_valor(movies.diretor) %></td>
-                  <td>  <%= tratar_valor(movies.genero) %></td>
-                  <td>  <%= formatar_data(movies.estreia) %></td>
-                  <td><a href="/movies/<%=movies.id %>/edit"><%= image_tag 'editIcon.png'%></a>  <a href="/movies/<%=movies.id %>"><%= image_tag 'deleteIcon.png'%></a>  </td>
+                  <td class="text-center">  <%= tratar_valor(movies.titulo) %></td>
+                  <td class="text-center">  <%= tratar_valor(movies.diretor) %></td>
+                  <td class="text-center">  <%= tratar_valor(movies.genero) %></td>
+                  <td class="text-center">  <%= formatar_data(movies.estreia) %></td>
+                  <td class="text-center"><a href="/movies/<%=movies.id %>"><%= image_tag 'settings-gears.png'%></a></td>
                 </tr>
               <% end %>
             </tbody>
