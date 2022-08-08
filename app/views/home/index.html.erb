@@ -1,39 +1,56 @@
-<div class="card mb-3 col-12 dark-gray-6">
-  <div class="row g-0 rounded dark-gray-6">
-    <div class="col-md-6 mainCard">
-                  <div id="movies">
-                <% Movie.all.find() do |movies| %>
-                </div>
-      <img src="<%=movies.capa%>" alt="Imagem filme principal">
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title"><%=movies.titulo%></h5>
-        <p class="card-text">Diretor: <%=movies.diretor%></p>
-        <p class="card-text">Estreia: <%=movies.estreia%></p>
-        <p class="card-text">Gênero: <%=movies.genero%></p>
-        <p class="card-text">Elenco: <%=movies.elenco%></p>
-        <p class="card-text">Sinopse: <%=movies.sinopse%></p>
-
+<% if Movie.all.length > 0 %>
+  <div class="card mb-3 col-12 dark-gray-6">
+    <div class="row g-0 rounded dark-gray-6">
+      <div class="col-md-6 mainCard">
+        <div id="movies">
+          <% Movie.all.last(1).each do |movies| %>
+          </div>
+          <img src="<%=movies.capa%>" alt="Imagem filme principal">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title"><strong><%=movies.titulo%></strong></h5>
+            <p class="card-text"><strong>Diretor:</strong> <%=movies.diretor%></p>
+            <p class="card-text"><strong>Estreia:</strong> <%=movies.estreia%></p>
+            <p class="card-text"><strong>Gênero:</strong> <%=movies.genero%></p>
+            <p class="card-text"><strong>Elenco:</strong> <%=movies.elenco%></p>
+            <p class="card-text sinopse"><strong>Sinopse:</strong> <%=movies.sinopse%></p>
+          </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
-</div>
-<div class="row">
- <div class="col-sm-4">
-    <div class="card dark-gray-6">
-                      <div id="movies">
-                <% Movie.all.find(:last) do |movies| %>
-                </div>
-      <img src="<%=movies.capa%>" alt="Imagem filme intermediário">
-      <div class="card-body">
-        <h5 class="card-title"><%=movies.titulo%></h5>
-        <p class="card-text">Diretor: <%=movies.diretor%></p>
-        <p class="card-text">Estreia: <%=movies.estreia%></p>
-        <p class="card-text">Sinopse: <%=movies.sinopse%></p>
+<% else %>
+  <div class="col-12">
+    <div class="rounded">
+      <div class="alert alert-danger w-100 h-100" role="alert">
+        Não há filmes cadastrados no momento...
       </div>
-      <% end %>
     </div>
   </div>
-</div>
+<% end %>
+<% if Movie.all.length > 1 %>
+  <div class="row">
+    <% Movie.all.last(3).each do |movies| %>
+      <div class="col-sm-4">
+        <div class="card dark-gray-6">
+          <img src="<%=movies.capa%>" alt="Imagem filme intermediário">
+          <div class="card-body">
+            <p class="card-title h5"></strong><%=movies.titulo%></strong></p>
+            <p class="card-text"><strong>Diretor:</strong> <%=movies.diretor%></p>
+            <p class="card-text"><strong>Estreia:</strong> <%=movies.estreia%></p>
+            <p class="card-text sinopse2"><strong>Sinopse:</strong> <%=movies.sinopse%></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% else %>
+  <div class="col-12">
+    <div class="rounded">
+      <div class="alert alert-danger w-100 h-100" role="alert">
+        Não há sub-filmes cadastrados no momento...
+      </div>
+    </div>
+  </div>
+<% end %>
